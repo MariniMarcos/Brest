@@ -175,4 +175,27 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Calculadora alimentos
+   */
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const calcularBtn = document.querySelector('button[type="button"]');
+    
+    calcularBtn.addEventListener('click', function() {
+        calcularPorcion();
+    });
+  });
+
+  function calcularPorcion() {
+    let peso = document.getElementById('pesoPerro').value;
+
+    let valorFijo = 300;
+
+    let porcion = peso * valorFijo;
+
+    document.getElementById('resultado').innerText = `La cantidad de alimento es: ${porcion} gramos`;
+  }
+
+
 })();
