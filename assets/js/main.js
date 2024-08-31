@@ -175,27 +175,30 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
-  /**
-   * Calculadora alimentos
-   */
+/**
+ * Calculadora alimentos
+ */
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const calcularBtn = document.querySelector('button[type="button"]');
-    
-    calcularBtn.addEventListener('click', function() {
-        calcularPorcion();
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  const calcularBtn = document.getElementById('calcularBtn');
+
+  calcularBtn.addEventListener('click', function() {
+    calcularPorcion();
   });
+});
 
-  function calcularPorcion() {
-    let peso = document.getElementById('pesoPerro').value;
+function calcularPorcion() {
+  let peso = parseFloat(document.getElementById('pesoPerro').value);
 
-    let valorFijo = 300;
+  // Calcular el 3% del peso
+  let valorFijo = 0.03;
 
-    let porcion = peso * valorFijo;
+  // Convertir a kilogramos
+  let porcionKilos = peso * valorFijo;
 
-    document.getElementById('resultado').innerText = `La cantidad de alimento es: ${porcion} gramos`;
-  }
+  // Usar alert para mostrar el resultado en kilogramos
+  document.getElementById('resultado').innerText = `La cantidad de alimento es: ${porcionKilos.toFixed(2)} kilos`                           ;
+}
 
 
 })();

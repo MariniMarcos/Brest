@@ -1265,6 +1265,18 @@ section,
   color: var(--accent-color);
 }
 
+.TextoChefs{
+  display: flex;
+  margin-bottom: 3rem;
+  text-align: justify;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  padding-right: 10rem;
+  padding-left: 10rem;
+}
+
 .menu .tab-content .menu-item {
     text-align-last: center;
     display: flex;
